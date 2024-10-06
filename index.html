@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PENTING</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+            animation: fadeIn 1s;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hai All, Kenalin Aku Afifah Dina Octaviana</h1>
+    <h2>Yaa, Pasti Kamu Bingung, Ini Apaan sih wkwk</h2>
+    <p>Klik tombol di bawah ini untuk tahu lebih lanjut!</p>
+    <button onclick="showMessage()">KLIK</button>
+    <div id="message"></div>
+
+    <script>
+        const messages = [
+            "Hai Albani, Aku mau bilang sesuatu, to the point aja ya...",
+            "Aku ada rasa tertarik sama Kamu.",
+            "Tertarik yang kayak gimana yaa?",
+            "Yapp, bener Aku SUKA Kamu.",
+            "Jika ditanya gimana sih Aku bisa tertarik sama Kamu, itu Aku juga gak tau, hehe ^_^.",
+            "Gitu aja sih, Aku gatau mau ngomong apa lagi...",
+            "Aku gak berharap lebih sih, tapi setelah confess ku ini kuharap kita gak asing dan ya udah kayak biasanya aja...",
+            "Maaf ya, karena Aku bilang kayak gini.",
+            "Kalo ngomong langsung jujur aku ga ada nyali, dan pasti Kamu juga sibuk.",
+            "Aku lebih ke takut sih nanti kalo feedbackmu ga sesuai ekspektasiku.",
+            "Aku juga takut bikin kamu ga nyaman, kalo mau confess kayak orang lain, yaa gimana ya menurutku terlalu biasa dan kurang berkesan.",
+            "Aku bikin kayak gini lewat GPT sama GOOGLE sihh bukan karyaku sendiri jadi jangan diroasting ya wkwk, tapi tetep ku edit sendiri.",
+            "Okee, sekian makasih udah ngeluangin waktuknya sebentar, jangan salfok karena aku pake codingan ya  `^w^ .",
+        ];
+
+        let index = 0;
+
+        function showMessage() {
+            const messageDiv = document.getElementById("message");
+            messageDiv.style.display = "block";
+            
+            if (index < messages.length) {
+                messageDiv.innerText = messages[index];
+                messageDiv.style.opacity = 0; // Reset opacity
+                setTimeout(() => {
+                    messageDiv.style.opacity = 1; // Fade in
+                }, 50);
+                index++;
+            } else {
+                // Reset setelah semua pesan ditampilkan
+                index = 0;
+                messageDiv.style.display = "none"; // Sembunyikan setelah selesai
+            }
+        }
+    </script>
+</body>
+</html>
